@@ -14,7 +14,7 @@ public class UserController {
     public String createUser(Model model){
 
         model.addAttribute("user",new UserDTO());
-        //model.addAttribute("roles",LISTOFROLES)
+        //model.addAttribute("roles",LISTOFROLES); //bring me all roles from DB.
         return "/user/create"; //folder path
     }
 }
