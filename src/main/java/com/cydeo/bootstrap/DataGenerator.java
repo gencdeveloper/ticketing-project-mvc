@@ -16,6 +16,7 @@ public class DataGenerator implements CommandLineRunner {
     RoleService roleService;
     UserService userService;
 
+    //DataGenerator
     public DataGenerator(RoleService roleService, UserService userService) {
         this.roleService = roleService;
         this.userService = userService;
