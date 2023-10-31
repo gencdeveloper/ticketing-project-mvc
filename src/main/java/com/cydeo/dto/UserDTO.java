@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class UserDTO {
+public class UserDTO { //interacting with ui or controller
     private String firstName;
     private String lastName;
     private String userName;

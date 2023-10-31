@@ -1,17 +1,16 @@
-package com.cydeo.enums;
+package com.cydeo.entity;
 
 import com.cydeo.entity.BaseEntity;
 import com.cydeo.entity.Role;
+import com.cydeo.enums.Gender;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
-@Data
-public class User extends BaseEntity {//if you create extend the class lombok can not create allArgConstructor fully
-                                     //so, we can not put AllArgConstructor whenever that use extends
-                                    //you have create constructor as a manually
+@Data //User entity interaction with DataBase
+public class User extends BaseEntity {
 
     private String firstName;
     private String lastName;
@@ -22,6 +21,9 @@ public class User extends BaseEntity {//if you create extend the class lombok ca
     private Role role;
     private Gender gender;
 
+    //if you create extend the class lombok can not create allArgConstructor fully
+    //so, we can not put AllArgConstructor whenever that use extends
+    //you have to create constructor as a manually
     public User(Long id, LocalDateTime insertDateTime, Long insertUserId, LocalDateTime lastUpdateDateTime, Long lastUpdateUserId, String firstName, String lastName, String userName, String passWord, boolean enabled, String phone, Role role, Gender gender) {
         super(id, insertDateTime, insertUserId, lastUpdateDateTime, lastUpdateUserId);
         this.firstName = firstName;

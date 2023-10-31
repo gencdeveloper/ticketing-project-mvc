@@ -7,8 +7,14 @@ import com.cydeo.service.RoleService;
 import com.cydeo.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-@Component
+/**
+ *CommandLineRunner, Spring Boot'un sağladığı bir arabirimdir ve Spring uygulamalarını başlatırken veya uygulamanın hazır olduğu belirli bir aşamada kodu çalıştırmak için kullanılır.
+ * Bu arabirim, uygulamanızın başlangıç aşamasında özel işlemler gerçekleştirmenize olanak tanır. Genellikle,
+ * uygulamanızın başlangıcında bazı veritabanı kayıtlarını başlatmak, servisleri başlatmak veya başka başlangıç işlemlerini gerçekleştirmek için kullanılır.
+ * CommandLineRunner arabirimi, yalnızca bir run metodu içerir. Bu metod, uygulama başlatıldığında çağrılır ve başlangıç işlemlerinizi içermelidir.
+ * İşte CommandLineRunner'ı uygulama sınıfınızda kullanmanın temel bir örneği:
+ * */
+@Component // we need to bean
 public class DataGenerator implements CommandLineRunner {
 
 
@@ -17,7 +23,7 @@ public class DataGenerator implements CommandLineRunner {
     UserService userService;
 
     //DataGenerator
-    public DataGenerator(RoleService roleService, UserService userService) {
+    public DataGenerator(RoleService roleService, UserService userService) {//injection through to interface  and constructor
         this.roleService = roleService;
         this.userService = userService;
     }
